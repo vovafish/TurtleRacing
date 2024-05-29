@@ -66,3 +66,4 @@ colors = COLORS[:racers]  #to get the first number of colors as much as we have 
 
 winner = race(colors)
 print("The winner is the Turtle with color: ", winner)
+time.sleep(5)
