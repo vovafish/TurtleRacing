@@ -1,6 +1,9 @@
 import turtle
+import time
+import random
 
 WIDTH, HEIGHT = 500, 500
+COLORS = ["red", "green", "orange", "yellow", "black", "pink", "brown", "cyan", "blue", "purple"]
 
 
 def get_number__of_racers():
@@ -19,6 +22,17 @@ def get_number__of_racers():
             print("Number not in range 2 - 10. Try again!")
             continue
 
+def create_turtles(colors):
+    turtles = []
+    for i, color in enumerate(colors):
+        racer = turtle.Turtle()
+        racer.color(color)
+        racer.shape("turtle")
+        racer.left(90)
+        racer.penup()
+
+        turtles.append(racer)
+
 
 def init_turtle():
     screen = turtle.Screen()
@@ -28,3 +42,7 @@ def init_turtle():
 
 racers = get_number__of_racers()
 init_turtle()
+random.shuffle(COLORS)
+colors = COLORS[:racers]  #to get the first number of colors as much as we have racers
+create_turtles(colors)
+
